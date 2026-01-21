@@ -4,6 +4,9 @@
 #include <QMainWindow>
 #include <QTableWidget>
 #include <QDate>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlError>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class HotelManager; }
@@ -19,12 +22,22 @@ public:
 
 private slots:
     void onDateChanged();
-    void updateTableHeaders();
-    void fillSampleData();
+    void onTableClicked(const QModelIndex &index);
+    void addBooking();
+    void removeBooking();
 
 private:
+    void initDatabase();
+    void updateTableHeaders();
+    void loadOccupancyFromDB();
+    void saveOccupancyToDB(int roomNumber, const QDate &date, bool occupied);
+    bool isRoomOccupied(int roomNumber, const QDate &date);
+
     Ui::HotelManager *ui;
     QDate startDate;
-    QMap<int, QSet<QDate>> roomOccupancy; // ключ - номер комнаты, значение - множество занятых дат
+    QSqlDatabase db;
+
+    // Кэш занятости для быстрого доступа
+    QMap<QPair<int, QDate>, bool> occupancyCache;
 };
 #endif // HOTELMANAGER_H
