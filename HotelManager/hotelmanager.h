@@ -7,6 +7,10 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
+#include <QAction>
+#include <QMap>
+#include <QSet>
+#include <QPair>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class HotelManager; }
@@ -25,13 +29,22 @@ private slots:
     void onTableClicked(const QModelIndex &index);
     void addBooking();
     void removeBooking();
+    void addRoom();
+    void deleteRoom();
+    void manageClients();
+    void manageServices();
+    void viewReports();
 
 private:
     void initDatabase();
+    void initMenuBar();
     void updateTableHeaders();
     void loadOccupancyFromDB();
+    void loadRoomsFromDB();
     void saveOccupancyToDB(int roomNumber, const QDate &date, bool occupied);
     bool isRoomOccupied(int roomNumber, const QDate &date);
+    bool isValidRoomName(const QString &name);
+    QString getRoomNameFromUser(const QString &title, const QString &label, const QString &defaultValue = "");
 
     Ui::HotelManager *ui;
     QDate startDate;
