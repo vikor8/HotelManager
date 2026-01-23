@@ -26,20 +26,15 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 namespace {
 struct qt_meta_stringdata_HotelManager_t {
-    uint offsetsAndSizes[26];
+    uint offsetsAndSizes[16];
     char stringdata0[13];
     char stringdata1[14];
     char stringdata2[1];
     char stringdata3[15];
     char stringdata4[12];
     char stringdata5[6];
-    char stringdata6[11];
-    char stringdata7[14];
-    char stringdata8[8];
-    char stringdata9[11];
-    char stringdata10[14];
-    char stringdata11[15];
-    char stringdata12[12];
+    char stringdata6[16];
+    char stringdata7[4];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_HotelManager_t::offsetsAndSizes) + ofs), len 
@@ -51,13 +46,8 @@ Q_CONSTINIT static const qt_meta_stringdata_HotelManager_t qt_meta_stringdata_Ho
         QT_MOC_LITERAL(28, 14),  // "onTableClicked"
         QT_MOC_LITERAL(43, 11),  // "QModelIndex"
         QT_MOC_LITERAL(55, 5),  // "index"
-        QT_MOC_LITERAL(61, 10),  // "addBooking"
-        QT_MOC_LITERAL(72, 13),  // "removeBooking"
-        QT_MOC_LITERAL(86, 7),  // "addRoom"
-        QT_MOC_LITERAL(94, 10),  // "deleteRoom"
-        QT_MOC_LITERAL(105, 13),  // "manageClients"
-        QT_MOC_LITERAL(119, 14),  // "manageServices"
-        QT_MOC_LITERAL(134, 11)   // "viewReports"
+        QT_MOC_LITERAL(61, 15),  // "showContextMenu"
+        QT_MOC_LITERAL(77, 3)   // "pos"
     },
     "HotelManager",
     "onDateChanged",
@@ -65,13 +55,8 @@ Q_CONSTINIT static const qt_meta_stringdata_HotelManager_t qt_meta_stringdata_Ho
     "onTableClicked",
     "QModelIndex",
     "index",
-    "addBooking",
-    "removeBooking",
-    "addRoom",
-    "deleteRoom",
-    "manageClients",
-    "manageServices",
-    "viewReports"
+    "showContextMenu",
+    "pos"
 };
 #undef QT_MOC_LITERAL
 } // unnamed namespace
@@ -82,7 +67,7 @@ Q_CONSTINIT static const uint qt_meta_data_HotelManager[] = {
       10,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -90,26 +75,14 @@ Q_CONSTINIT static const uint qt_meta_data_HotelManager[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   68,    2, 0x08,    1 /* Private */,
-       3,    1,   69,    2, 0x08,    2 /* Private */,
-       6,    0,   72,    2, 0x08,    4 /* Private */,
-       7,    0,   73,    2, 0x08,    5 /* Private */,
-       8,    0,   74,    2, 0x08,    6 /* Private */,
-       9,    0,   75,    2, 0x08,    7 /* Private */,
-      10,    0,   76,    2, 0x08,    8 /* Private */,
-      11,    0,   77,    2, 0x08,    9 /* Private */,
-      12,    0,   78,    2, 0x08,   10 /* Private */,
+       1,    0,   32,    2, 0x08,    1 /* Private */,
+       3,    1,   33,    2, 0x08,    2 /* Private */,
+       6,    1,   36,    2, 0x08,    4 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 4,    5,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::QPoint,    7,
 
        0        // eod
 };
@@ -128,20 +101,9 @@ Q_CONSTINIT const QMetaObject HotelManager::staticMetaObject = { {
         // method 'onTableClicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QModelIndex &, std::false_type>,
-        // method 'addBooking'
+        // method 'showContextMenu'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'removeBooking'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'addRoom'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'deleteRoom'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'manageClients'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'manageServices'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'viewReports'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        QtPrivate::TypeAndForceComplete<const QPoint &, std::false_type>
     >,
     nullptr
 } };
@@ -154,13 +116,7 @@ void HotelManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         switch (_id) {
         case 0: _t->onDateChanged(); break;
         case 1: _t->onTableClicked((*reinterpret_cast< std::add_pointer_t<QModelIndex>>(_a[1]))); break;
-        case 2: _t->addBooking(); break;
-        case 3: _t->removeBooking(); break;
-        case 4: _t->addRoom(); break;
-        case 5: _t->deleteRoom(); break;
-        case 6: _t->manageClients(); break;
-        case 7: _t->manageServices(); break;
-        case 8: _t->viewReports(); break;
+        case 2: _t->showContextMenu((*reinterpret_cast< std::add_pointer_t<QPoint>>(_a[1]))); break;
         default: ;
         }
     }
@@ -185,13 +141,13 @@ int HotelManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 3;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 3)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 9;
+        _id -= 3;
     }
     return _id;
 }

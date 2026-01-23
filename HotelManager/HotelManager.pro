@@ -9,11 +9,23 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    hotelmanager_booking.cpp \
+    hotelmanager_clients.cpp \
+    hotelmanager_database.cpp \
+    hotelmanager_reports.cpp \
+    hotelmanager_rooms.cpp \
+    hotelmanager_ui.cpp \
     main.cpp \
     hotelmanager.cpp
 
 HEADERS += \
-    hotelmanager.h
+    hotelmanager.h \
+    hotelmanager_booking.h \
+    hotelmanager_clients.h \
+    hotelmanager_database.h \
+    hotelmanager_reports.h \
+    hotelmanager_rooms.h \
+    hotelmanager_ui.h
 
 FORMS += \
     hotelmanager.ui
