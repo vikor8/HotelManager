@@ -3,6 +3,13 @@
 #include "ui_hotelmanager.h"
 #include "hotelmanager_ui.h"
 
+#include <QSqlError>
+#include <QSqlQuery>
+#include <QSqlDatabase>
+#include <QMessageBox>
+#include <QDate>
+#include <QVariant>
+
 #include <QDebug>
 #include <QSqlQuery>
 

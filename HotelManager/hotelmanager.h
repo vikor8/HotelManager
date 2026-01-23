@@ -7,7 +7,6 @@
 #include <QMap>
 #include <QPair>
 #include <QStatusBar>
-#include <QSqlError>  // Добавлено
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

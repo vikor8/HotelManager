@@ -10,6 +10,8 @@
 #include <QPushButton>
 #include <QMessageBox>
 #include <QSqlDatabase>
+#include <QWidget>
+#include <QSqlError>
 
 class HotelManager;
 

@@ -1,24 +1,30 @@
 #ifndef HOTELMANAGER_UI_H
 #define HOTELMANAGER_UI_H
 
+#include <QWidget>
+#include <QPoint>  // Добавить эту строку
+
+// Вместо forward declaration HotelManager, если он определен в другом файле
 class HotelManager;
 
-class HotelManagerUI
+namespace Ui {
+class HotelManagerUI;
+}
+
+class HotelManagerUI : public QWidget
 {
+    Q_OBJECT
+
 public:
-    static void initUI(HotelManager *manager);
-    static void initMenuBar(HotelManager *manager);
-    static void showContextMenu(HotelManager *manager, const QPoint &pos);
-    static void updateTableHeaders(HotelManager *manager);
+    explicit HotelManagerUI(QWidget *parent = nullptr);
+    ~HotelManagerUI();
+
+    // Изменить сигнатуру метода - убрать static или сделать правильно
+    void showContextMenu(const QPoint &pos);
 
 private:
-    static void setupTableWidget(HotelManager *manager);
-    static void setupDateWidget(HotelManager *manager);
-    static void createFileMenu(HotelManager *manager);
-    static void createClientsMenu(HotelManager *manager);
-    static void createBookingMenu(HotelManager *manager);
-    static void createServicesMenu(HotelManager *manager);
-    static void createReportsMenu(HotelManager *manager);
+    Ui::HotelManagerUI *ui;
+    HotelManager *manager; // Если нужен доступ к менеджеру
 };
 
 #endif // HOTELMANAGER_UI_H
